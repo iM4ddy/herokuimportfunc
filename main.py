@@ -25,6 +25,9 @@ def process_pdf():
 
     return jsonify({'Part Numbers': extracted_partnum, 'Part Designations': extracted_partdes})
 
+@app.route('/home')
+def home_page():
+    return "Hello World!"
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
