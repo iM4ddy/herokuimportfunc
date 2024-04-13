@@ -5,6 +5,7 @@ import tabula
 
 app = Flask(__name__)
 
+
 @app.route('/process_pdf', methods=['POST'])
 def process_pdf():
     # Get the PDF file from the request
@@ -23,6 +24,7 @@ def process_pdf():
         extracted_partdes.extend(part_designations)  # Append individual part designations
 
     return jsonify({'Part Numbers': extracted_partnum, 'Part Designations': extracted_partdes})
+
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
